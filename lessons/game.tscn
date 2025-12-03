@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c62bk8cggi6yq"]
+
+[ext_resource type="PackedScene" uid="uid://ctfrkukdhiywq" path="res://lessons/circuit.tscn" id="1_4o7yg"]
+[ext_resource type="PackedScene" uid="uid://dwdga860bidlx" path="res://lessons/Runner.tscn" id="1_yasw7"]
+[ext_resource type="PackedScene" uid="uid://bqyt66qognb6h" path="res://lessons/simple_obstacle.tscn" id="2_4o7yg"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Circuit" parent="Sprite2D" instance=ExtResource("1_4o7yg")]
+
+[node name="Runner" parent="." instance=ExtResource("1_yasw7")]
+position = Vector2(753, 695)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_4o7yg")]
+z_index = -1
+position = Vector2(983, 743)
