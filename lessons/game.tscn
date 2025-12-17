@@ -23,13 +23,14 @@ texture = ExtResource("1_gkp25")
 
 [node name="Runner" parent="." instance=ExtResource("1_yasw7")]
 unique_name_in_owner = true
-position = Vector2(-461, -787)
+position = Vector2(-1180, -300)
 
 [node name="Bouncer" parent="." instance=ExtResource("5_8c4bg")]
 unique_name_in_owner = true
-position = Vector2(-990, -514)
+position = Vector2(-752, -734)
 max_speed = 600.0
 acceleration = 1200.0
+avoidance_strength = 30000.0
 
 [node name="FinishLine" parent="." instance=ExtResource("4_sepuf")]
 unique_name_in_owner = true
@@ -37,7 +38,27 @@ position = Vector2(1342, 290)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_4o7yg")]
 z_index = -1
-position = Vector2(983, 743)
+position = Vector2(-1409, 91)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_4o7yg")]
+z_index = -1
+position = Vector2(-1272, 324)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_4o7yg")]
+z_index = -1
+position = Vector2(-504, 339)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_4o7yg")]
+z_index = -1
+position = Vector2(-377, 106)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_4o7yg")]
+z_index = -1
+position = Vector2(523, 218)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_4o7yg")]
+z_index = -1
+position = Vector2(380, 454)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
