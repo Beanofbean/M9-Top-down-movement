@@ -1,8 +1,9 @@
 extends Node2D
 
 @onready var _finish_line: FinishLine = %FinishLine
-@onready var count_down: CountDown = %CountDown
-@onready var runner: Runner = %Runner
+@onready var _count_down: CountDown = %CountDown
+@onready var _runner: Runner = %Runner
+@onready var _bouncer: CharacterBody2D = %Bouncer
 
 func _ready() -> void:
 	_finish_line.body_entered.connect(func (body: Node) -> void:
@@ -25,9 +26,16 @@ func _ready() -> void:
 	_finish_line.confettis_finished.connect(
 		get_tree().reload_current_scene.call_deferred
 	)
-	count_down.start_counting()
-	runner.set_physics_process(false)
-	count_down.counting_finished.connect(
+	_count_down.start_counting()
+	_runner.set_physics_process(false)
+	_count_down.counting_finished.connect(
 		func() -> void:
-			runner.set_physics_process(true)
+			_runner.set_physics_process(true)
+	)
+
+	_bouncer.set_physics_process(false)
+
+	_count_down.counting_finished.connect(
+		func() -> void:
+			_bouncer.set_physics_process(true)
 )
